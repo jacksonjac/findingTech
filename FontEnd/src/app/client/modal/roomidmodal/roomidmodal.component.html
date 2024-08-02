@@ -4,14 +4,14 @@
     type="text" 
     [(ngModel)]="roomId" 
     class="bg-gray-900 text-white p-0.5 outline-none ml-2 flex-grow" 
-    placeholder="Create a Room Id"
+    placeholder="Enter your Room Id"
   >
   <button 
     class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none" 
     (click)="createRoom()"
     [disabled]="!roomId"  
   >
-    Create Room
+    Submit
   </button>
   <div (click)="closeModal()" class="cursor-pointer">
     <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">

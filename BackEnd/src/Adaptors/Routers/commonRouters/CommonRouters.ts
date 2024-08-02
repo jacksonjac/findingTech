@@ -9,7 +9,7 @@ export default (dependencies: any) => {
            getUserbyIdControllers,
            getTechbyIdControllers
            ,getAllSlotsCtrl,
-           getChatsByidController,getChatListByidCtrl,getChatlistbyTechCtrl,getOneUserbyidCtrl
+           getChatsByidController,getChatListByidCtrl,getChatlistbyTechCtrl,getOneUserbyidCtrl,RoomidtoEmailCtrl
                  } = CommonControllers(dependencies);
 
   
@@ -26,8 +26,9 @@ export default (dependencies: any) => {
   router.get("/getChatsbyId",getChatsByidController),
   router.get("/AllChatlistByid",getChatListByidCtrl),
   router.get("/AllChatlistByTechid",getChatlistbyTechCtrl),
-
-  router.get("/AllSlots",getAllSlotsCtrl)
+  router.get("/AllSlots",getAllSlotsCtrl),
+  router.post('/sentRoomidToEmail',RoomidtoEmailCtrl)
+ 
   
  
 

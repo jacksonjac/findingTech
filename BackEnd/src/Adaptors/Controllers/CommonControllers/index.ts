@@ -11,7 +11,7 @@ import getChatsByidController from './getChatsByidsCtrl'
 import getChatListByidCtrl from './getChatListByidCtrl'
 import getChatlistbyTechCtrl from './getChatlistbyTechCtrl'
 import getOneUserbyidCtrl from './getOneUserbyidCtrl'
-
+import RoomidtoEmailCtrl from './RoomidtoEmailCtrl'
 export default (dependencies:any)=>{
 
  return {
@@ -26,7 +26,8 @@ export default (dependencies:any)=>{
     getChatListByidCtrl:getChatListByidCtrl(dependencies),
     getChatsByidController:getChatsByidController(dependencies),
     getChatlistbyTechCtrl:getChatlistbyTechCtrl(dependencies),
-    getOneUserbyidCtrl:getOneUserbyidCtrl(dependencies)
+    getOneUserbyidCtrl:getOneUserbyidCtrl(dependencies),
+    RoomidtoEmailCtrl:RoomidtoEmailCtrl(dependencies)
  }
 
 }

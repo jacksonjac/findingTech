@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TechAuthService } from '../Servies/Technician/tech-auth.service';
-
+ import { fadeAnimation } from '../Servies/animations/animation.service';
 @Component({
   selector: 'app-technician',
   templateUrl: './technician.component.html',

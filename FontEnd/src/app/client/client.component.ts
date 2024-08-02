@@ -3,6 +3,8 @@ import { UserAuthService } from '../Servies/Users/user-auth.service';
  import { fadeAnimation } from '../Servies/animations/animation.service';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router'
 import { NgxSpinnerService } from 'ngx-spinner';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { RoomidmodalComponent } from './modal/roomidmodal/roomidmodal.component';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -23,7 +25,8 @@ export class ClientComponent implements OnInit {
   constructor(
     private auth: UserAuthService, 
     private router: Router,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private modal: MatDialog,
   ) { }
 
   ngOnInit(): void {
@@ -52,4 +55,12 @@ export class ClientComponent implements OnInit {
   getRouteAnimationData(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
+  showInputmodal(){
+    const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      const dialogRef = this.modal.open(RoomidmodalComponent, dialogConfig);
+    
+      
+    
+    }
 }

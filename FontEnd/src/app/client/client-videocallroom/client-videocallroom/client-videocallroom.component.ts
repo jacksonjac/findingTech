@@ -21,7 +21,8 @@ export class ClientVideocallroomComponent implements OnInit{
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.roomId = params['id'];
-      const Username = "jackson";
+      console.log(this.roomId)
+      const Username = localStorage.getItem('UserName') || 'guest'
       if (this.roomId) {
         this.initializeZegoCloud(this.roomId, Username);
       } else {

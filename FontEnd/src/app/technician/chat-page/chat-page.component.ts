@@ -3,6 +3,9 @@ import { Subscription } from 'rxjs';
 import { TechChatserviceService } from 'src/app/Servies/Technician/ChatService/chatservice.service';
 import { ActivatedRoute } from '@angular/router';
 import { TechAuthService } from 'src/app/Servies/Technician/tech-auth.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { RoomidmodalComponent } from 'src/app/client/modal/roomidmodal/roomidmodal.component';
+import { CreateroomComponent } from '../modal/createRoom/createroom/createroom.component';
 @Component({
   selector: 'app-chat-page',
   templateUrl: './chat-page.component.html',
@@ -25,7 +28,9 @@ export class ChatPageComponent {
 
   private messageSubscription: Subscription | undefined;
 
-  constructor(private chatService: TechChatserviceService,private route:ActivatedRoute,
+  constructor(private chatService: TechChatserviceService,
+    private route:ActivatedRoute,
+    private modal: MatDialog,
     private auth:TechAuthService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -40,24 +45,22 @@ export class ChatPageComponent {
         )
       this.Userid = message.SenderId
       this.messages.push(message);
-      this.scrollToBottom()
+     
       
     });
 
     this.getChatUsers(this.technicianId)
    
   }
-  showInputmodal(){
-    
-  }
+
   ngAfterViewInit(): void {
     // Scroll to bottom initially after the view is initialized
-    this.scrollToBottom();
+    // this.scrollToBottom();
   }
 
   ngAfterViewChecked(): void {
     // Ensure the scroll happens after each view check
-    this.scrollToBottom();
+   
   }
 
   getChatUsers(techid:any) {
@@ -77,7 +80,15 @@ export class ChatPageComponent {
     this.getChats(Userid,this.technicianId);
     this.getUserData(Userid);
     this.messagebox = true
-    this.scrollToBottom();
+    // this.scrollToBottom();
+  }
+  showInputmodal(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = { email: this.UsernData.email };
+    localStorage.setItem('userEmailtovideocall',this.UsernData.email)
+    const dialogRef = this.modal.open(CreateroomComponent, dialogConfig);
+    
   }
   getChats(userid: any, techid: any) {
     console.log("this is the ids gonna pass ", userid, "--", techid);
@@ -123,7 +134,7 @@ export class ChatPageComponent {
         response.SenderType = "technician"; // Ensure the SenderType is set correctly
         this.messages.push(response);
         this.cdr.detectChanges();
-        this.scrollToBottom(); // Trigger change detection
+        // this.scrollToBottom(); // Trigger change detection
       });
 
       this.newMessage = '';

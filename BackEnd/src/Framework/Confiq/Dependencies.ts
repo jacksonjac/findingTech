@@ -1,4 +1,4 @@
-import {AddNewAddress, addNewSlot, AdminApproveTech, AdminRefuseTech, AllSlots, CanselSlot, DeleteDesignation, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, getBookingsbyUserId, getOneTEchById, getOneUserById, getSlotDatabyId, MessageHandler, RegisterNewUser, TechUploadImage, UploadImage, UserAddnewSlot} from '../../Application'
+import {AddNewAddress, addNewSlot, AdminApproveTech, AdminRefuseTech, AllSlots, CanselSlot, DeleteDesignation, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, getBookingsbyUserId, getOneTEchById, getOneUserById, getSlotDatabyId, MessageHandler, RegisterNewUser, RoomidtoEmail, TechUploadImage, UploadImage, UserAddnewSlot} from '../../Application'
 import { loginNewUser } from '../../Application'
 import { CanselSlotRepo, LogTechRepo, RegisterNewUserRepo, TechImageUploadRepo, UserImageUploadRepo, blockUserRepo, chatRepo, getBookingsbyUseridRepo, getChatlistbyTechidRepo, getChatlistbyidRepo, getOneUserbyidRepo, getSlotsDatabyIdRepo, getSlotsRepo, googlenewUserRepo} from '../MongoDb/Repository'
 import { loginNewUserRepo} from '../MongoDb/Repository'
@@ -99,7 +99,9 @@ const useCase:any={
     GetAllChatsListbyid,
     GetAllChatsListbyTechid,
     getOneUserById,
-    TechUploadImage
+    TechUploadImage,
+    RoomidtoEmail
+
     
     
     

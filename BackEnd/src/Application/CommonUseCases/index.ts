@@ -1,5 +1,4 @@
 
-
 import { AllDesignation } from './getDesignation'
 import { AllQuestions } from './getQuestions'
 import { getQuestionById } from './getQuestionbyDesi'
@@ -12,6 +11,7 @@ import { GetAllChatsbyIds } from './getChatsbyids'
 import { GetAllChatsListbyid } from './getChatlistsbyid'
 import { GetAllChatsListbyTechid } from './getChatlistByTechid'
 import { getOneUserById } from './getOneUserbyid'
+import { RoomidtoEmail } from './RoomidtoEmail'
 
 
 
@@ -28,7 +28,8 @@ export {
     GetAllChatsbyIds,
     GetAllChatsListbyid,
     GetAllChatsListbyTechid,
-    getOneUserById
+    getOneUserById,
+    RoomidtoEmail
     
     
     

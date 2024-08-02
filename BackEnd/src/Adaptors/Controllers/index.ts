@@ -33,7 +33,6 @@ import getSlotDataCtrl from "./UserControllers";
 import getBookigbyUseridCtrl from "./UserControllers/getBookigbyUseridCtrl";
 import CanselSlotController from "./techniciansCtrl/CanselSlotController";
 import UserProfileUploadController from "./UserControllers"
-
 import getChatsByidController from './CommonControllers'
 import getChatListByidCtrl from "./CommonControllers";
 import getChatlistbyTechCtrl from "./CommonControllers/getChatlistbyTechCtrl";
@@ -41,6 +40,7 @@ import getOneUserbyidCtrl from "./CommonControllers/getOneUserbyidCtrl";
 import TechImageUpload from "./techniciansCtrl/TechImageUpload";
 import technicianRegisterController from "./techniciansCtrl/technicianRegisterController";
 import logintechinicianController from "./techniciansCtrl/logintechinicianController";
+import RoomidtoEmailCtrl from "./CommonControllers/RoomidtoEmailCtrl";
 
 
 
@@ -91,7 +91,10 @@ export {
     getChatsByidController,
     getChatlistbyTechCtrl,
     getOneUserbyidCtrl,
-    TechImageUpload
+    TechImageUpload,
+    RoomidtoEmailCtrl
+
+    
     
   
     

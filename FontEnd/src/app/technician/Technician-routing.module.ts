@@ -13,6 +13,7 @@ import { authguardGuard } from './guards/guardauth.guard';
 import { TechProfileComponent } from './tech-profile/tech-profile/tech-profile.component';
 import { ChatPageComponent } from './chat-page/chat-page.component';
 import {notokenGuard} from './guards/notoken.guard'
+import { VideocallpageComponent } from './tech-videocall/videocallpage/videocallpage.component';
 const routes: Routes = [
   {
     path: 'technician',
@@ -27,7 +28,8 @@ const routes: Routes = [
       {path:'quiz-page',component:TechQuizpageComponent},
       {path:'slot-page',component:TechAddslotComponent,canActivate:[authguardGuard]},
       {path:'tech-Profile',component:TechProfileComponent,canActivate:[authguardGuard]},
-      {path:"chatpage",component:ChatPageComponent,canActivate:[authguardGuard]}
+      {path:"chatpage",component:ChatPageComponent,canActivate:[authguardGuard]},
+      { path: 'room/:id', component: VideocallpageComponent },
       
     ]
   }

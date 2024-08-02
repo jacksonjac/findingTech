@@ -16,6 +16,7 @@ export class ClientChatpageComponent implements OnInit{
   newMessage: string = '';
   Userid: any;
   technicianData: any;
+  messagebox:boolean=false
   private messageSubscription: Subscription | undefined;
 
   constructor(
@@ -51,7 +52,9 @@ export class ClientChatpageComponent implements OnInit{
       }
     });
   }
+  showInputmodal(){
 
+  }
   getTechData(techid: any) {
     this.auth.getOneTechbyId(techid).subscribe((response: any) => {
       

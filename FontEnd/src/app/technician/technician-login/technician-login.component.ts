@@ -47,6 +47,7 @@ export class TechnicianLoginComponent {
             localStorage.setItem('techtoken', response.token);
             localStorage.setItem('techid', response.data._id);
             localStorage.setItem('techemail', response.data.email);
+            localStorage.setItem('techName',response.data.name)
            
             
             this.toastService.showSuccess('Login Successful', 'Welcome to the Technicians List!');

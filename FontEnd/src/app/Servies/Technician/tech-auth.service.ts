@@ -73,7 +73,11 @@ getOneUserbyId(UserId:any){
       
     this.router.navigate(['technician']);
   }
-
+  sendRoomIdToEmail(roomId: string, email: string): Observable<any> {
+    const emailData = { roomId, email };
+        console.log("sendToommto temil passsing...",roomId,email)
+    return this.http.post<any>(`${this.baseUrl}api/common/sentRoomidToEmail`, emailData);
+  }
   checkTechStatusByid(id:any){
     console.log("check pasing id ")
     return this.http.get(`${this.baseUrl}api/technician/GetTechDatabyId?id=${id}`, {});

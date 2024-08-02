@@ -83,6 +83,8 @@ import { ClientAllchatsComponent } from './client/client-allchats/client-allchat
 import { RoomidmodalComponent } from './client/modal/roomidmodal/roomidmodal.component';
 import { ClientVideocallroomComponent } from './client/client-videocallroom/client-videocallroom/client-videocallroom.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CreateroomComponent } from './technician/modal/createRoom/createroom/createroom.component';
+import { VideocallpageComponent } from './technician/tech-videocall/videocallpage/videocallpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,6 +132,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ClientAllchatsComponent,
     RoomidmodalComponent,
     ClientVideocallroomComponent,
+    CreateroomComponent,
+    VideocallpageComponent,
  
   ],
   imports: [
