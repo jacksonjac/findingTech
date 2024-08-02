@@ -1,0 +1,11 @@
+import {User} from './schema/UserSchema'
+import { Questions } from './schema/Questionsschema'
+import { Technican } from './schema/TechnicianSchema'
+import { Admin } from './schema/AdminSchema'
+import { Designation } from './schema/DesignationSchema'
+import {Slot} from './schema/SlotSchema'
+import {Address} from './schema/UserAddressSchema'
+import { Bookings } from './schema/BookingsSchema'
+import { Chat } from './schema/chatSchema'
+
+export { User ,Technican,Admin,Designation,Questions,Slot,Address,Bookings,Chat}

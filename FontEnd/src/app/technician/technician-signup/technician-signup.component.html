@@ -1,0 +1,202 @@
+
+<div class="flex items-center justify-center  ">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="w-full max-w-full p-10 rounded-lg shadow-md bg-white">
+        <h1 class="text-center font-serif font-bold text-5xl mb-8 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            </svg>
+           Technician Sign Up
+        </h1>
+
+       
+
+        <div class="mb-6">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Name</span>
+            </label>
+            <input type="text" id="name" formControlName="name" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Name">
+            <div *ngIf="signupForm.get('name')?.invalid && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
+                <div *ngIf="signupForm.get('name')?.errors?.['required']" class="text-red-500 text-xs italic">Name is required.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z" />
+                </svg>
+                <span>Email</span>
+            </label>
+            <input type="email" id="email" formControlName="email" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Email">
+            <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
+                <div *ngIf="signupForm.get('email')?.errors?.['required']" class="text-red-500 text-xs italic">Email is required.</div>
+                <div *ngIf="signupForm.get('email')?.errors?.['email']" class="text-red-500 text-xs italic">Invalid email address.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Phone Number</span>
+            </label>
+            <input type="text" id="phone" formControlName="phone" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Number">
+            <div *ngIf="signupForm.get('phone')?.invalid && (signupForm.get('phone')?.dirty || signupForm.get('phone')?.touched)">
+                <div *ngIf="signupForm.get('phone')?.errors?.['required']" class="text-red-500 text-xs italic">Phone number is required.</div>
+                <div *ngIf="signupForm.get('phone')?.errors?.['pattern']" class="text-red-500 text-xs italic">Invalid phone number.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="district" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z" />
+                </svg>
+                <span>Select City</span>
+            </label>
+            <select id="district" formControlName="district" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="Kollam">Kollam</option>
+                <option value="Kottayam">Kottayam</option>
+                <option value="Ernakulam">Ernakulam</option>
+                <option value="Kozhikode">Kozhikode</option>
+            </select>
+            <div *ngIf="signupForm.get('district')?.invalid && (signupForm.get('district')?.dirty || signupForm.get('district')?.touched)">
+                <div *ngIf="signupForm.get('district')?.errors?.['required']" class="text-red-500 text-xs italic">City is required.</div>
+            </div>
+        </div>
+        <div class="mb-6">
+            <label for="workexp" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Work experience</span>
+            </label>
+            <input type="text" id="workexp" formControlName="workexp" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Work Experience">
+            <div *ngIf="signupForm.get('workexp')?.invalid && (signupForm.get('workexp')?.dirty || signupForm.get('workexp')?.touched)">
+                <div *ngIf="signupForm.get('workexp')?.errors?.['required']" class="text-red-500 text-xs italic">Work experience is required.</div>
+                <div *ngIf="signupForm.get('workexp')?.errors?.['pattern']" class="text-red-500 text-xs italic">Invalid work experience.</div>
+            </div>
+        </div>
+        <div class="mb-6">
+            <label for="worklevel" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Work Level</span>
+            </label>
+            <input type="text" id="worklevel" formControlName="worklevel" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Work Level">
+            <div *ngIf="signupForm.get('worklevel')?.invalid && (signupForm.get('worklevel')?.dirty || signupForm.get('worklevel')?.touched)">
+                <div *ngIf="signupForm.get('worklevel')?.errors?.['required']" class="text-red-500 text-xs italic">Work level is required.</div>
+                <div *ngIf="signupForm.get('worklevel')?.errors?.['pattern']" class="text-red-500 text-xs italic">Invalid work level.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="designation" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Designation</span>
+            </label>
+            <select id="designation" formControlName="Designation" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <option value="">Select Designation</option>
+                <option value="Mobile Technician">Mobile Technician</option>
+                <option value="Computer Technician">Computer Technician</option>
+                <option value="AC Technician">AC Technician</option>
+            </select>
+            <div *ngIf="signupForm.get('Designation')?.invalid && (signupForm.get('Designation')?.dirty || signupForm.get('Designation')?.touched)">
+                <div *ngIf="signupForm.get('Designation')?.errors?.['required']" class="text-red-500 text-xs italic">Designation is required.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="aadhaarNo" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Aadhaar No</span>
+            </label>
+            <input type="text" id="aadhaarNo" formControlName="AadarNo" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your Aadhaar Number">
+            <div *ngIf="signupForm.get('AadarNo')?.invalid && (signupForm.get('AadarNo')?.dirty || signupForm.get('AadarNo')?.touched)">
+                <div *ngIf="signupForm.get('AadarNo')?.errors?.['required']" class="text-red-500 text-xs italic">Aadhaar number is required.</div>
+                <div *ngIf="signupForm.get('AadarNo')?.errors?.['pattern']" class="text-red-500 text-xs italic">Aadhaar number must be 12 digits long.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="panNo" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>PAN No</span>
+            </label>
+            <input type="text" id="panNo" formControlName="PanNo" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your PAN Number">
+            <div *ngIf="signupForm.get('PanNo')?.invalid && (signupForm.get('PanNo')?.dirty || signupForm.get('PanNo')?.touched)">
+                <div *ngIf="signupForm.get('PanNo')?.errors?.['required']" class="text-red-500 text-xs italic">PAN number is required.</div>
+                <div *ngIf="signupForm.get('PanNo')?.errors?.['pattern']" class="text-red-500 text-xs italic">Invalid PAN number format.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="serviceCharge" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 11.121a1.5 1.5 0 1 1 2.121-2.121l1.415 1.415a1.5 1.5 0 1 1-2.121 2.121L5.12 11.12ZM15.536 3a1.5 1.5 0 0 1 0 2.121L14.121 6.536a1.5 1.5 0 0 1-2.121-2.121L13.414 3h2.122ZM20 14.121a1.5 1.5 0 0 1 0 2.121l-1.415 1.415a1.5 1.5 0 0 1-2.121-2.121L17.879 14.12h2.121Z" />
+                </svg>
+                <span>Service Charge</span>
+            </label>
+            <input type="text" id="serviceCharge" formControlName="serviceCharge" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter Service Charge">
+            <div *ngIf="signupForm.get('serviceCharge')?.invalid && (signupForm.get('serviceCharge')?.dirty || signupForm.get('serviceCharge')?.touched)">
+                <div *ngIf="signupForm.get('serviceCharge')?.errors?.['required']" class="text-red-500 text-xs italic">Service charge is required.</div>
+                <div *ngIf="signupForm.get('serviceCharge')?.errors?.['pattern']" class="text-red-500 text-xs italic">Invalid service charge. Please enter a valid number.</div>
+            </div>
+        </div>
+
+
+        <div class="mb-6">
+            <label for="password" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z" />
+                </svg>
+                <span>Password</span>
+            </label>
+            <input type="password" id="password" formControlName="password" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter New Password">
+            <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
+                <div *ngIf="signupForm.get('password')?.errors?.['required']" class="text-red-500 text-xs italic">Password is required.</div>
+                <div *ngIf="signupForm.get('password')?.errors?.['pattern']" class="text-red-500 text-xs italic">Password must contain at least one uppercase letter, one number, and no spaces.</div>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="confirm-password" class="block text-gray-700 text-sm font-bold mb-2 inline-flex items-center">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10V7a4 4 0 1 1 8 0v3h1a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h1Zm2-3a2 2 0 1 1 4 0v3h-4V7Zm2 6a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z" />
+                </svg>
+                <span>Confirm Password</span>
+            </label>
+            <input type="password" id="confirm-password" formControlName="confirmPassword" class="shadow appearance-none border rounded w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Confirm your Password">
+            <div *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)">
+                <div *ngIf="signupForm.get('confirmPassword')?.errors?.['required']" class="text-red-500 text-xs italic">Confirmation password is required.</div>
+                <div *ngIf="signupForm.get('confirmPassword')?.errors?.['mismatch']" class="text-red-500 text-xs italic">Passwords must match.</div>
+            </div>
+        </div>
+
+        <button type="submit"
+        class="py-2 px-4 rounded focus:outline-none block mx-auto w-40 mt-4"
+        [class.bg-blue-500]="signupForm.valid"
+        [class.bg-gray-300]="signupForm.invalid"
+        [disabled]="signupForm.invalid">
+        <span class="text-white font-bold" *ngIf="signupForm.valid">Submit</span>
+        <span class="text-gray-600" *ngIf="signupForm.invalid">Submit</span>
+      </button>
+
+
+        <div class="flex flex-col justify-center items-center mt-4 space-y-2">
+            <a href="/login" class="text-blue-500">Already have an account? Login</a>
+        </div>
+    </form>
+</div>
