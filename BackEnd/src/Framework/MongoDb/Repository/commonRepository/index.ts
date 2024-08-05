@@ -11,6 +11,8 @@ import getChatlistbyidRepo from "./getChatlistbyidRepo"
 import getChatlistbyTechidRepo from "./getChatlistbyTechidRepo"
 import getOneUserbyidRepo from "./getOneUserbyidRepo"
 import getCommetsbyidRepo from "./getCommetsbyidRepo"
+import notificationRepo from "./notificationRepo"
+import getNotificationbyidRepo from "./getNotificationbyidRepo"
 
 
 
@@ -27,7 +29,9 @@ export {
      getChatlistbyidRepo,
      getChatlistbyTechidRepo,
      getOneUserbyidRepo,
-     getCommetsbyidRepo
+     getCommetsbyidRepo,
+     notificationRepo,
+     getNotificationbyidRepo
    
     
     

@@ -1,6 +1,15 @@
-import {AddNewAddress, AddNewComment, addNewSlot, AdminApproveTech, AdminRefuseTech, AllSlots, CanselSlot, DeleteDesignation, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, GetAllCommentsbyTechid, getBookingsbyUserId, getOneTEchById, getOneUserById, getSlotDatabyId, MessageHandler, RegisterNewUser, RoomidtoEmail, TechUploadImage, UploadImage, UserAddnewSlot} from '../../Application'
+import {AddNewAddress, AddNewComment,
+     addNewSlot,
+      AdminApproveTech,
+       AdminRefuseTech, 
+       AllSlots
+       , CanselSlot
+       , DeleteDesignation, 
+       GetAllChatsbyIds,
+        GetAllChatsListbyid,
+         GetAllChatsListbyTechid, GetAllCommentsbyTechid, GetAllNotibyTechid, getBookingsbyUserId, getOneTEchById, getOneUserById, getSlotDatabyId, MessageHandler, NotificationHandler, RegisterNewUser, RoomidtoEmail, TechUploadImage, UploadImage, UserAddnewSlot} from '../../Application'
 import { loginNewUser } from '../../Application'
-import { CanselSlotRepo, LogTechRepo, RegisterNewUserRepo, TechImageUploadRepo, UserImageUploadRepo, addNewCommetRepo, blockUserRepo, chatRepo, getBookingsbyUseridRepo, getChatlistbyTechidRepo, getChatlistbyidRepo, getCommetsbyidRepo, getOneUserbyidRepo, getSlotsDatabyIdRepo, getSlotsRepo, googlenewUserRepo} from '../MongoDb/Repository'
+import { CanselSlotRepo, LogTechRepo, RegisterNewUserRepo, TechImageUploadRepo, UserImageUploadRepo, addNewCommetRepo, blockUserRepo, chatRepo, getBookingsbyUseridRepo, getChatlistbyTechidRepo, getChatlistbyidRepo, getCommetsbyidRepo, getNotificationbyidRepo, getOneUserbyidRepo, getSlotsDatabyIdRepo, getSlotsRepo, googlenewUserRepo, notificationRepo} from '../MongoDb/Repository'
 import { loginNewUserRepo} from '../MongoDb/Repository'
 import { GoogleRegister } from '../../Application'
 import { RegisterNewTech } from '../../Application'
@@ -102,7 +111,10 @@ const useCase:any={
     TechUploadImage,
     RoomidtoEmail,
     AddNewComment,
-    GetAllCommentsbyTechid
+    GetAllCommentsbyTechid,
+    NotificationHandler,
+    GetAllNotibyTechid
+   
 
     
     
@@ -162,7 +174,9 @@ const repositery:any={
    getOneUserbyidRepo,
    TechImageUploadRepo,
    addNewCommetRepo,
-   getCommetsbyidRepo
+   getCommetsbyidRepo,
+   notificationRepo,
+   getNotificationbyidRepo
    
    
 

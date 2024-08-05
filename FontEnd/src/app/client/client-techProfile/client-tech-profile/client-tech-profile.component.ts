@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserAuthService } from 'src/app/Servies/Users/user-auth.service';
 import { DateBookComponent } from '../../modal/dateBook/date-book/date-book.component';
 import { ToastService } from 'src/app/Servies/Toster/toast-service.service';
+import { UserChatServicesService } from 'src/app/Servies/Users/chatService/chat-servies.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-client-tech-profile',
@@ -12,16 +14,21 @@ import { ToastService } from 'src/app/Servies/Toster/toast-service.service';
 })
 export class ClientTechProfileComponent implements OnInit {
   value: number | undefined
-   avgvalue=0
+  avgvalue=0
   technician: any;
   comments: any[] = [];
   isFormValid = false;
   userId = ""
   Rcount =0
+  liked: boolean = false;
+  likeCount: number = 0;
+  private messageSubscription: Subscription | undefined;
   constructor(
     private route: ActivatedRoute, private auth:UserAuthService,
     private modal: MatDialog,private cdr: ChangeDetectorRef,
-    private router:Router,private toaster:ToastService
+    private router:Router,private toaster:ToastService,
+    private chatService:UserChatServicesService,
+   
   
   ) {}
 
@@ -39,6 +46,7 @@ export class ClientTechProfileComponent implements OnInit {
    if(userid){
     this.userId = userid
    }
+
     const id = this.route.snapshot.paramMap.get('id');
      if(id){
 
@@ -48,7 +56,17 @@ export class ClientTechProfileComponent implements OnInit {
      }
 
      this.getComments(id)
+
+     this.chatService.receiveNotifications().subscribe(notification => {
+      console.log(notification,"this is recevided status of the notification")
+      
+      if(notification.status){
+       
+      }
+      // Handle the notification (e.g., display a toast or update the UI)
+    });
   }
+  
 
   chatpage(id: any): void {
     console.log(id, "this is the technician id");
@@ -79,6 +97,40 @@ export class ClientTechProfileComponent implements OnInit {
         console.error("Error adding comment:", error);
       }
     );
+  }
+  ngOnDestroy(): void {
+    if (this.messageSubscription) {
+      this.messageSubscription.unsubscribe();
+    }
+  }
+  toggleLike(): void {
+    this.liked = !this.liked;
+    this.likeCount += this.liked ? 1 : -1;
+    console.log("like clicked");
+
+    const userName = localStorage.getItem('UserName');
+
+    if (this.technician._id && userName) {
+      const likeNotification = {
+        userid: this.userId,
+        technicianId: this.technician._id,
+        content: `${userName} liked your profile.`,
+        date: new Date()
+      };
+
+      this.chatService.sendLikeNotification(likeNotification, (response: any) => {
+        console.log('Notification response:', response);
+        if (response.status) {
+          this.toaster.showSuccess("Liked Successfully", "");
+          this.fetchTechnicianDetails(this.technician._id); // Refresh technician data
+        } else {
+          this.toaster.showError("Already Liked", "alredyliked");
+          this.liked = !this.liked; // Revert like state
+          this.likeCount += this.liked ? 1 : -1; // Revert like count
+        }
+        this.cdr.detectChanges(); // Refresh the view
+      });
+    }
   }
   getComments(techid: any) {
     this.auth.getCommentsByTechid(techid).subscribe((response:any) => {

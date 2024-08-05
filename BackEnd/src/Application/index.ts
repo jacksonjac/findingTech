@@ -4,7 +4,7 @@ import { CanselSlot, RegisterNewTech, TechUploadImage, loginNewTech } from './Te
 import { loginNewAdmin ,Adminuserlist,AdminBlockUser,AdminUnBlockUser,AdminTechlist ,AdminBlockTech,AdminUnblockTech, AdminApproveTech, DeleteDesignation} from './AdminUseCase'
 import { VerifyTech } from './TechnicianUseCases'
 import { AddDesignation } from './AdminUseCase'
-import { AllDesignation, AllSlots, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, GetAllCommentsbyTechid, getOneTEchById, getOneUserById, MessageHandler, RoomidtoEmail } from './CommonUseCases'
+import { AllDesignation, AllSlots, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, GetAllCommentsbyTechid, GetAllNotibyTechid, getOneTEchById, getOneUserById, MessageHandler, NotificationHandler, RoomidtoEmail } from './CommonUseCases'
 import { AddQuestion } from './AdminUseCase'
 import { AllQuestions } from './CommonUseCases'
 import { getQuestionById } from './CommonUseCases'
@@ -65,6 +65,8 @@ export {
    UploadImage,
    RoomidtoEmail,
    AddNewComment,
-   GetAllCommentsbyTechid
+   GetAllCommentsbyTechid,
+   NotificationHandler,
+   GetAllNotibyTechid
    
 }

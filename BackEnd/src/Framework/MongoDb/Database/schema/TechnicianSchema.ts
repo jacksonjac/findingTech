@@ -63,6 +63,11 @@ const technicianSchema = new mongoose.Schema({
       type: Boolean,
       default: false // Default value is false
     },
+    Likes:{
+      type:Number,
+      required:false,
+      default:0
+    },
     image:{
       type:String,
       default:false

@@ -85,6 +85,7 @@ import { ClientVideocallroomComponent } from './client/client-videocallroom/clie
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateroomComponent } from './technician/modal/createRoom/createroom/createroom.component';
 import { VideocallpageComponent } from './technician/tech-videocall/videocallpage/videocallpage.component';
+import { TechNotificationsComponent } from './technician/modal/tech-notificationpage/tech-notifications/tech-notifications.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,8 @@ import { VideocallpageComponent } from './technician/tech-videocall/videocallpag
     ClientVideocallroomComponent,
     CreateroomComponent,
     VideocallpageComponent,
+    TechNotificationsComponent,
+    
  
   ],
   imports: [

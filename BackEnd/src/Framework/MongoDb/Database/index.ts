@@ -8,4 +8,5 @@ import {Address} from './schema/UserAddressSchema'
 import { Bookings } from './schema/BookingsSchema'
 import { Chat } from './schema/chatSchema'
 import { Comment } from './schema/CommentSchema'
-export { User ,Technican,Admin,Designation,Questions,Slot,Address,Bookings,Chat,Comment}
+import { Notification} from './schema/NotificationSchema'
+export { User ,Technican,Admin,Designation,Questions,Slot,Address,Bookings,Chat,Comment,Notification}

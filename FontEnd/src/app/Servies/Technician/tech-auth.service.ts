@@ -105,6 +105,12 @@ getOneUserbyId(UserId:any){
     
     // return this.http.get<any>(`${this.baseUrl}api/common/`)
   }
+  getNotificationsByTechId(techId: string): Observable<any> {
+
+      console.log("getnotificaqtion passing",techId)
+    return this.http.get<any>(`${this.baseUrl}api/common/AllNoficationbyid?id=${techId}`);
+  }
+
 
   CanselSlot(slotid:any){
     return this.http.put<any>(`${this.baseUrl}api/technician/canselSlot?id=${slotid}`, {})

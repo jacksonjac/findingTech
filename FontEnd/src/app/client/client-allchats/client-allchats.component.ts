@@ -40,6 +40,11 @@ export class ClientAllchatsComponent implements OnInit, AfterViewInit {
       this.messages.push(message);
       this.scrollToBottom();
     });
+    this.messageSubscription = this.chatService.receiveMessages().subscribe((message: any) => {
+      console.log("Received message:", message);
+      this.messages.push(message);
+      this.scrollToBottom();
+    });
   }
 
   ngAfterViewInit(): void {

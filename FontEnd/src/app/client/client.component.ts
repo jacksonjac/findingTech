@@ -5,6 +5,7 @@ import {NavigationEnd, Router, RouterOutlet} from '@angular/router'
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { RoomidmodalComponent } from './modal/roomidmodal/roomidmodal.component';
+import { NotificationsComponent } from './modal/notificationpage/notifications/notifications.component';
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
@@ -58,9 +59,13 @@ export class ClientComponent implements OnInit {
   showInputmodal(){
     const dialogConfig = new MatDialogConfig();
       dialogConfig.autoFocus = true;
-      const dialogRef = this.modal.open(RoomidmodalComponent, dialogConfig);
+      const dialogRef = this.modal.open(RoomidmodalComponent, dialogConfig);   
     
-      
-    
+    }
+    showNotificationPage(){
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      const dialogRef = this.modal.open(NotificationsComponent, dialogConfig);   
+
     }
 }

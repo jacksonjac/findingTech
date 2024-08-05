@@ -4,7 +4,7 @@ import { User } from '../../Database';
 import { Comment } from '../../Database';
 
 export default {
-    PostExit: async (techId: mongoose.Types.ObjectId) => {
+    PostExit: async (techId:any) => {
         console.log("Fetching comments for technician:", techId);
 
         try {
@@ -33,7 +33,7 @@ export default {
               commentCount
             };
           } else {
-            console.log("No comments found for the technician");
+           
             return {
               status: false,
               message: "No comments found for the technician",

@@ -23,6 +23,7 @@ import * as bodyParser from 'body-parser';
 import  cors from 'cors';
 import * as dotenv from 'dotenv';
 import session from 'express-session';
+import { NotificationHandler } from './Application';
 dotenv.config();
 const appPass = process.env.APP_PASS;
 
@@ -57,7 +58,7 @@ const io = new SocketIOServer(server, {
 });
 
 const socketUsers = new Map();
-
+const notificationUsers = new Map();
 io.on('connection', (socket) => {
   console.log('A user connected');
 
@@ -65,6 +66,11 @@ io.on('connection', (socket) => {
     console.log('User registered with id:', id);
     socketUsers.set(id, socket.id);
   });
+  socket.on('registerNotification', (id) => {
+    console.log('User registered for notifications with id:', id);
+    notificationUsers.set(id, socket.id);
+  });
+
 
   socket.on('message', async (chat, callback) => {
     try {
@@ -106,11 +112,67 @@ io.on('connection', (socket) => {
     }
   });
 
+
+
+  // socket.on('notification', async (notificationData, callback) => {
+  //   try {
+  //     const { receiverId, content } = notificationData;
+  //     console.log('Received notification:', notificationData);
+
+  //     const { NotificationHandler } = dependencies.useCase;
+  //     const response = await NotificationHandler(dependencies).executeFunction(notificationData);
+  //     console.log(response);
+
+  //     // Check if the notification was successfully processed
+  //     if (response.status) {
+  //       const receiverSocketId = notificationUsers.get(receiverId);
+  //       if (receiverSocketId) {
+  //         io.to(receiverSocketId).emit('NewNotification', response.data);
+  //       }
+  //       callback(response.data); // Pass the notification data to the callback
+  //     } else {
+  //       callback({ status: false, message: "Notification could not be sent" });
+  //     }
+  //   } catch (error) {
+  //     console.error('Error handling notification:', error);
+  //     callback({ status: false, message: "An error occurred" });
+  //   }
+  // });
+  socket.on('likeNotification', async (likeData, callback) => {
+    try {
+      const { userid, technicianId, content, date } = likeData;
+      console.log('Received like notification:', likeData);
+
+      const { NotificationHandler } = dependencies.useCase;
+      const response = await NotificationHandler(dependencies).executeFunction(likeData);
+      console.log(response,"this is sthe responce of the notfication handler");
+
+      if (response.status) {
+        const receiverSocketId = notificationUsers.get(technicianId);
+        if (receiverSocketId) {
+          io.to(receiverSocketId).emit('NewLikeNotification', response.data);
+        }
+        callback(response.status);
+      } else {
+        callback({ status: false, message: "Like notification could not be sent" });
+      }
+    } catch (error) {
+      console.error('Error handling like notification:', error);
+      callback({ status: false, message: "An error occurred" });
+    }
+  });
+
   socket.on('disconnect', () => {
     console.log('A user disconnected');
     for (const [id, socketId] of socketUsers.entries()) {
       if (socketId === socket.id) {
         socketUsers.delete(id);
+        break;
+      }
+    }
+    for (const [id, socketId] of notificationUsers.entries()) {
+      if (socketId === socket.id) {
+        notificationUsers.delete(id);
         break;
       }
     }

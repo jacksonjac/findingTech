@@ -43,6 +43,7 @@ import logintechinicianController from "./techniciansCtrl/logintechinicianContro
 import RoomidtoEmailCtrl from "./CommonControllers/RoomidtoEmailCtrl";
 import AddNewCommentCtrl from "./UserControllers/AddNewCommentCtrl";
 import getCommentsbyidCtrl from "./CommonControllers/getCommentsbyidCtrl";
+import getAllnotificationCtrl from "./CommonControllers/getAllnotificationCtrl";
 
 
 
@@ -96,7 +97,8 @@ export {
     TechImageUpload,
     RoomidtoEmailCtrl,
     AddNewCommentCtrl,
-    getCommentsbyidCtrl
+    getCommentsbyidCtrl,
+    getAllnotificationCtrl
 
     
     

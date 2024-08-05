@@ -13,6 +13,7 @@ import getChatlistbyTechCtrl from './getChatlistbyTechCtrl'
 import getOneUserbyidCtrl from './getOneUserbyidCtrl'
 import RoomidtoEmailCtrl from './RoomidtoEmailCtrl'
 import getCommentsbyidCtrl from './getCommentsbyidCtrl'
+import getAllnotificationCtrl from './getAllnotificationCtrl'
 export default (dependencies:any)=>{
 
  return {
@@ -29,7 +30,8 @@ export default (dependencies:any)=>{
     getChatlistbyTechCtrl:getChatlistbyTechCtrl(dependencies),
     getOneUserbyidCtrl:getOneUserbyidCtrl(dependencies),
     RoomidtoEmailCtrl:RoomidtoEmailCtrl(dependencies),
-    getCommentsbyidCtrl:getCommentsbyidCtrl(dependencies)
+    getCommentsbyidCtrl:getCommentsbyidCtrl(dependencies),
+    getAllnotificationCtrl:getAllnotificationCtrl(dependencies)
  }
 
 }

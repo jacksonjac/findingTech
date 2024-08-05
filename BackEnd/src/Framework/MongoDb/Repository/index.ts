@@ -14,7 +14,7 @@ import {blockTechRepo} from './AdminRepository'
 import {UnblockTechRepo} from './AdminRepository'
 import {VerifyTechidRepo} from './TechnicianRepository'
 import {AddDesignationRepo} from './AdminRepository'
-import { chatRepo, getChatlistbyidRepo, getChatlistbyTechidRepo, getChatsByidRepo, getCommetsbyidRepo, getDesignationRepo, getOneUserbyidRepo, getSlotsRepo } from './commonRepository'
+import { chatRepo, getChatlistbyidRepo, getChatlistbyTechidRepo, getChatsByidRepo, getCommetsbyidRepo, getDesignationRepo, getNotificationbyidRepo, getOneUserbyidRepo, getSlotsRepo, notificationRepo } from './commonRepository'
 import {AddQuestionRepo} from './AdminRepository'
 import {getAllQuestionRepo} from './commonRepository'
 import { getQuestionByidRepo } from './commonRepository'
@@ -75,7 +75,9 @@ export {
     getOneUserbyidRepo,
     TechImageUploadRepo,
     addNewCommetRepo,
-    getCommetsbyidRepo
+    getCommetsbyidRepo,
+    notificationRepo,
+    getNotificationbyidRepo
     
     
 

@@ -13,6 +13,8 @@ import { GetAllChatsListbyTechid } from './getChatlistByTechid'
 import { getOneUserById } from './getOneUserbyid'
 import { RoomidtoEmail } from './RoomidtoEmail'
 import { GetAllCommentsbyTechid } from './getCommentsbyid'
+import { NotificationHandler } from './NotificationHandlerUsecase'
+import { GetAllNotibyTechid } from './getAllnoficationbyid'
 
 
 
@@ -31,7 +33,9 @@ export {
     GetAllChatsListbyTechid,
     getOneUserById,
     RoomidtoEmail,
-    GetAllCommentsbyTechid
+    GetAllCommentsbyTechid,
+    NotificationHandler,
+    GetAllNotibyTechid
     
     
     
