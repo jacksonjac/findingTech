@@ -7,6 +7,7 @@ import Addnew_Address_SlotRepo from "./Addnew_Address_SlotRepo"
 import getSlotsDatabyIdRepo from "./getSlotsDatabyIdRepo"
 import getBookingsbyUseridRepo from "./getBookingsbyUseridRepo"
 import UserImageUploadRepo from './UserImageUploadRepo'
+import addNewCommetRepo from "./addNewCommetRepo"
 
 
 export {
@@ -18,6 +19,7 @@ export {
     Addnew_Address_SlotRepo,
     getSlotsDatabyIdRepo,
     getBookingsbyUseridRepo,
-    UserImageUploadRepo
+    UserImageUploadRepo,
+    addNewCommetRepo
     
 }

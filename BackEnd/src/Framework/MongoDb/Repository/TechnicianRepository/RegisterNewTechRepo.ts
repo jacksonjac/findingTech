@@ -5,6 +5,7 @@ export default {
   postExist: async (data: any) => {
     try {
       // Fetch the designation document by name
+      console.log("data of ",data)
       const designationDoc = await Designation.findOne({ DesiName: data.designation });
       
       if (!designationDoc) {

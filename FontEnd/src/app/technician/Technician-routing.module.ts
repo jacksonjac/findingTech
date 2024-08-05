@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: '', component: TechnicianHomepageComponent ,canActivate:[authguardGuard]},
       { path: 'login', component:TechnicianLoginComponent,canActivate:[notokenGuard]},
-      { path: 'signup', component:TechnicianSignupComponent,canActivate:[authguardGuard]},
+      { path: 'signup', component:TechnicianSignupComponent},
       {path:'otp-page',component:TechnicianOtpComponent},
       {path:'tech-home',component:TechnicianHomepageComponent,canActivate:[authguardGuard]},
       {path:'quiz-start',component:TechQuizhomeComponent},

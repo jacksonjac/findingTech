@@ -109,6 +109,14 @@ getAllChatlistByid(UserId:any){
     return this.http.post<any>(`${this.baseUrl}api/user/Upload?techId=${techid}`, fileName);
   }
 
+  addComment(commentData: any): Observable<any> {
+    console.log("passing add comment fundata",commentData)
+    return this.http.post<any>(`${this.baseUrl}api/user/Add_newComment`, commentData);
+  }
 
+  getCommentsByTechid(techid:any){
+    console.log("passing get comments funtion wihttech id",techid)
+    return this.http.get(`${this.baseUrl}api/common/AllCommentlistByid?id=${techid}`,{});
+  }
  
 }

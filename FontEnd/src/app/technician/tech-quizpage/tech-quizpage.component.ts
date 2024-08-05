@@ -42,6 +42,8 @@ export class TechQuizpageComponent implements OnInit {
   fetchQuestionList() {
     this.auth.getAllQuestionsbyId(this.designation).subscribe(
       (response: any) => {
+
+        console.log(response,"the question lists")
         if (response.status) {
           const shuffled = response.data.sort(() => Math.random() - 0.5);
           this.questionsToShow = shuffled.slice(0, 3);

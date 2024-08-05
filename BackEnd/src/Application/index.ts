@@ -1,10 +1,10 @@
 
-import {GoogleRegister,RegisterNewUser,loginNewUser,VerifyUser, UserAddnewSlot, AddNewAddress, getSlotDatabyId, getBookingsbyUserId, UploadImage} from './UserUseCase'
+import {GoogleRegister,RegisterNewUser,loginNewUser,VerifyUser, UserAddnewSlot, AddNewAddress, getSlotDatabyId, getBookingsbyUserId, UploadImage, AddNewComment} from './UserUseCase'
 import { CanselSlot, RegisterNewTech, TechUploadImage, loginNewTech } from './TechnicianUseCases'
 import { loginNewAdmin ,Adminuserlist,AdminBlockUser,AdminUnBlockUser,AdminTechlist ,AdminBlockTech,AdminUnblockTech, AdminApproveTech, DeleteDesignation} from './AdminUseCase'
 import { VerifyTech } from './TechnicianUseCases'
 import { AddDesignation } from './AdminUseCase'
-import { AllDesignation, AllSlots, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, getOneTEchById, getOneUserById, MessageHandler, RoomidtoEmail } from './CommonUseCases'
+import { AllDesignation, AllSlots, GetAllChatsbyIds, GetAllChatsListbyid, GetAllChatsListbyTechid, GetAllCommentsbyTechid, getOneTEchById, getOneUserById, MessageHandler, RoomidtoEmail } from './CommonUseCases'
 import { AddQuestion } from './AdminUseCase'
 import { AllQuestions } from './CommonUseCases'
 import { getQuestionById } from './CommonUseCases'
@@ -63,6 +63,8 @@ export {
    getOneUserById,
    TechUploadImage,
    UploadImage,
-   RoomidtoEmail
+   RoomidtoEmail,
+   AddNewComment,
+   GetAllCommentsbyTechid
    
 }

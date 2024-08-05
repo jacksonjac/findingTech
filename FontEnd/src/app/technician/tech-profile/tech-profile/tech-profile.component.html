@@ -1,27 +1,52 @@
-<div class="flex flex-col items-center justify-center h-screen">
-    <h2 class="text-2xl mb-4">Upload Profile Image</h2>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+  <h2 class="text-3xl font-bold mb-6 text-gray-800">Technician Profile</h2>
+  
+  <!-- Profile Picture Section -->
+  <div class="bg-white shadow-md rounded-lg p-6 mb-8 w-full max-w-md">
+    <h3 class="text-2xl mb-4 text-center text-gray-800">Upload Profile Image</h3>
     
-    <!-- Round Technician Profile Picture -->
-    <div class="mb-4">
+    <div class="flex justify-center mb-4">
       <img
         [src]="techData.data.image"  
         alt="Profile"
-        class="w-36 h-36 rounded-full object-cover"
+        class="w-36 h-36 rounded-full object-cover border-2 border-gray-300"
       />
     </div>
-  
-    <form  (ngSubmit)="onSubmit()" class="flex flex-col items-center">
+    
+    <form (ngSubmit)="onSubmit()" class="flex flex-col items-center">
       <input
-      type="file"
-      (change)="onFileSelected($event)"
-        class="mb-4 border border-gray-300 p-2 rounded"
+        type="file"
+        (change)="onFileSelected($event)"
+        class="mb-4 border border-gray-300 p-2 rounded w-full"
       />
       <button
         type="submit"
-        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full"
       >
         Upload
       </button>
     </form>
   </div>
-  
+
+  <!-- Earnings Section -->
+  <div class="bg-white shadow-md rounded-lg p-6 mb-8 w-full max-w-md">
+    <h3 class="text-2xl mb-4 text-center text-gray-800">Earnings</h3>
+    <div class="text-center text-gray-700">
+      <p class="text-lg font-semibold">Total Earnings: <span class="text-green-600">$ {{ techData.data.earnings.total }}</span></p>
+      <p class="mt-2">This Month: <span class="text-green-600">$ {{ techData.data.earnings.month }}</span></p>
+      <p class="mt-2">This Week: <span class="text-green-600">$ {{ techData.data.earnings.week }}</span></p>
+    </div>
+  </div>
+
+  <!-- Technician Details Section -->
+  <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
+    <h3 class="text-2xl mb-4 text-center text-gray-800">Technician Details</h3>
+    <div class="text-center text-gray-700">
+      <p class="text-lg font-semibold">Name: {{ techData.data.name }}</p>
+      <p class="mt-2">Email: {{ techData.data.email }}</p>
+      <p class="mt-2">Phone: {{ techData.data.phone }}</p>
+      <p class="mt-2">District: {{ techData.data.district }}</p>
+      <p class="mt-2">Designation: {{ techData.data.designation }}</p>
+    </div>
+  </div>
+</div>

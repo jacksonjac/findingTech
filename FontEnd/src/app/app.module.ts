@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -69,6 +68,7 @@ import { ClientTechProfileComponent } from './client/client-techProfile/client-t
 import { TechAddslotComponent } from './technician/tech-addSlot/tech-addslot/tech-addslot.component';
 import {DateBookComponent} from './client/modal/dateBook/date-book/date-book.component'
 import { ChartModule } from 'primeng/chart';
+import { RatingModule } from 'primeng/rating';
 // import { socketConfig } from './Servies/socket.config';
 // import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { ClientPaymentComponent } from './client/client-payment/client-payment/client-payment.component';
@@ -85,6 +85,7 @@ import { ClientVideocallroomComponent } from './client/client-videocallroom/clie
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateroomComponent } from './technician/modal/createRoom/createroom/createroom.component';
 import { VideocallpageComponent } from './technician/tech-videocall/videocallpage/videocallpage.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -166,7 +167,9 @@ import { VideocallpageComponent } from './technician/tech-videocall/videocallpag
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    ChartModule
+    ChartModule,
+    RatingModule
+    
     
    
   ],

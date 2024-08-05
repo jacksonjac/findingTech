@@ -6,3 +6,7 @@
 @import "primeng/resources/primeng.css";
 html, body { height: 100%; background-color: rgb(250, 250, 250);}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* styles.css or styles.scss */
+.p-rating .p-rating-icon {
+    color: yellow; /* Change star color to yellow */
+  }

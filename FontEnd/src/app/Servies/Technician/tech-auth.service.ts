@@ -71,7 +71,7 @@ getOneUserbyId(UserId:any){
       localStorage.removeItem('techtoken')   
 
       
-    this.router.navigate(['technician']);
+    this.router.navigate(['/technician/login']);
   }
   sendRoomIdToEmail(roomId: string, email: string): Observable<any> {
     const emailData = { roomId, email };

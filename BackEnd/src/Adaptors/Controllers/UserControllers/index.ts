@@ -7,6 +7,7 @@ import AddNewAddressCtrl from './AddNewAddressCtrl'
 import getSlotDataCtrl from './getSlotDataCtrl'
 import getBookigbyUseridCtrl from './getBookigbyUseridCtrl'
 import UserProfileUploadController from './UserImageUploadCtrl'
+import AddNewCommentCtrl from './AddNewCommentCtrl'
 
 export default (dependencies:any)=>{
 
@@ -19,7 +20,9 @@ export default (dependencies:any)=>{
       AddNewAddressCtrl:AddNewAddressCtrl(dependencies),
       getSlotDataCtrl:getSlotDataCtrl(dependencies),
       getBookigbyUseridCtrl:getBookigbyUseridCtrl(dependencies),
-      UserProfileUploadController:UserProfileUploadController(dependencies)
-  };
+      UserProfileUploadController:UserProfileUploadController(dependencies),
+      AddNewCommentCtrl:AddNewCommentCtrl(dependencies)
+      
+  }
 
 }

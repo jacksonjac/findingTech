@@ -10,6 +10,7 @@ import getChatsByidRepo from "./getChatsByidRepo"
 import getChatlistbyidRepo from "./getChatlistbyidRepo"
 import getChatlistbyTechidRepo from "./getChatlistbyTechidRepo"
 import getOneUserbyidRepo from "./getOneUserbyidRepo"
+import getCommetsbyidRepo from "./getCommetsbyidRepo"
 
 
 
@@ -25,7 +26,8 @@ export {
      getChatsByidRepo,
      getChatlistbyidRepo,
      getChatlistbyTechidRepo,
-     getOneUserbyidRepo
+     getOneUserbyidRepo,
+     getCommetsbyidRepo
    
     
     

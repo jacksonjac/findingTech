@@ -8,13 +8,13 @@ import { ApproveTechRepo, DeleteDesiRepo, logAdminRepo } from './AdminRepository
 import {AdUserlistRepo} from './AdminRepository'
 import {blockUserRepo} from './AdminRepository'
 import {UnblockUserRepo} from  "./AdminRepository"
-import { Addnew_Address_SlotRepo, getBookingsbyUseridRepo, getSlotsDatabyIdRepo, UserImageUploadRepo, VerifyIdRepo } from './UserRepositoy'
+import { Addnew_Address_SlotRepo, addNewCommetRepo, getBookingsbyUseridRepo, getSlotsDatabyIdRepo, UserImageUploadRepo, VerifyIdRepo } from './UserRepositoy'
 import {AdTechlistRepo} from './AdminRepository'
 import {blockTechRepo} from './AdminRepository'
 import {UnblockTechRepo} from './AdminRepository'
 import {VerifyTechidRepo} from './TechnicianRepository'
 import {AddDesignationRepo} from './AdminRepository'
-import { chatRepo, getChatlistbyidRepo, getChatlistbyTechidRepo, getChatsByidRepo, getDesignationRepo, getOneUserbyidRepo, getSlotsRepo } from './commonRepository'
+import { chatRepo, getChatlistbyidRepo, getChatlistbyTechidRepo, getChatsByidRepo, getCommetsbyidRepo, getDesignationRepo, getOneUserbyidRepo, getSlotsRepo } from './commonRepository'
 import {AddQuestionRepo} from './AdminRepository'
 import {getAllQuestionRepo} from './commonRepository'
 import { getQuestionByidRepo } from './commonRepository'
@@ -73,7 +73,9 @@ export {
     getChatlistbyidRepo,
     getChatlistbyTechidRepo,
     getOneUserbyidRepo,
-    TechImageUploadRepo
+    TechImageUploadRepo,
+    addNewCommetRepo,
+    getCommetsbyidRepo
     
     
 

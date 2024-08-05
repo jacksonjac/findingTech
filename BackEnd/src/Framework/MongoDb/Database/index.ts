@@ -7,5 +7,5 @@ import {Slot} from './schema/SlotSchema'
 import {Address} from './schema/UserAddressSchema'
 import { Bookings } from './schema/BookingsSchema'
 import { Chat } from './schema/chatSchema'
-
-export { User ,Technican,Admin,Designation,Questions,Slot,Address,Bookings,Chat}
+import { Comment } from './schema/CommentSchema'
+export { User ,Technican,Admin,Designation,Questions,Slot,Address,Bookings,Chat,Comment}

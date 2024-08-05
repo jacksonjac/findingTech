@@ -5,9 +5,17 @@
     
     <form class="space-y-4">
       <div *ngFor="let option of [currentQuestion?.option1, currentQuestion?.option2, currentQuestion?.option3]; let i = index">
-        <input type="radio" [id]="'option' + (i + 1)" name="options" [value]="i + 1" class="hidden peer" (change)="onOptionSelected('' + (i + 1))">
-        <label [for]="'option' + (i + 1)" class="flex items-center justify-between w-full p-4 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 peer-checked:bg-blue-500 peer-checked:text-white">
-          Option {{ i + 1 }}
+        <input 
+          type="radio" 
+          [id]="'option' + (i + 1)" 
+          name="options" 
+          [value]="option" 
+          class="hidden peer" 
+          (change)="onOptionSelected(option)">
+        <label 
+          [for]="'option' + (i + 1)" 
+          class="flex items-center justify-between w-full p-4 bg-gray-200 rounded-lg cursor-pointer hover:bg-gray-300 peer-checked:bg-blue-500 peer-checked:text-white">
+          {{ option }}
         </label>
       </div>
     </form>

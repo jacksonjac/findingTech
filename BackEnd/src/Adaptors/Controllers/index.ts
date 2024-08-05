@@ -41,6 +41,8 @@ import TechImageUpload from "./techniciansCtrl/TechImageUpload";
 import technicianRegisterController from "./techniciansCtrl/technicianRegisterController";
 import logintechinicianController from "./techniciansCtrl/logintechinicianController";
 import RoomidtoEmailCtrl from "./CommonControllers/RoomidtoEmailCtrl";
+import AddNewCommentCtrl from "./UserControllers/AddNewCommentCtrl";
+import getCommentsbyidCtrl from "./CommonControllers/getCommentsbyidCtrl";
 
 
 
@@ -92,7 +94,9 @@ export {
     getChatlistbyTechCtrl,
     getOneUserbyidCtrl,
     TechImageUpload,
-    RoomidtoEmailCtrl
+    RoomidtoEmailCtrl,
+    AddNewCommentCtrl,
+    getCommentsbyidCtrl
 
     
     

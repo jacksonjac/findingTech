@@ -12,6 +12,7 @@ import { GetAllChatsListbyid } from './getChatlistsbyid'
 import { GetAllChatsListbyTechid } from './getChatlistByTechid'
 import { getOneUserById } from './getOneUserbyid'
 import { RoomidtoEmail } from './RoomidtoEmail'
+import { GetAllCommentsbyTechid } from './getCommentsbyid'
 
 
 
@@ -29,7 +30,8 @@ export {
     GetAllChatsListbyid,
     GetAllChatsListbyTechid,
     getOneUserById,
-    RoomidtoEmail
+    RoomidtoEmail,
+    GetAllCommentsbyTechid
     
     
     
